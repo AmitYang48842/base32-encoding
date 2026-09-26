@@ -1,0 +1,17 @@
+{
+  "name": "base32-encoding",
+  "version": "0.1.0",
+  "description": "Encodes and decodes binary data to and from a case-insensitive alphanumeric text format.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
