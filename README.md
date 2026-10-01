@@ -24,3 +24,10 @@ The trade-off: this is not RFC 4648 base32. If you need interoperability with sy
 - The byte encoder emits no `=` padding. Byte length is recovered from the symbol count, so padding is redundant and a source of transcription noise.
 - The integer encoder produces no fixed width; `encodeInt(0)` is `"0"`, not a zero-padded block.
 - The decoder accepts any case. The encoder emits uppercase only, so there is one canonical form on output.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
